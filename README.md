@@ -16,15 +16,16 @@
 
 ## 使い方
 ```
-  (use ffext) ; モジュールをロードします。
+  (use ffext) ; モジュールをロードします
   
   (find-file-in-paths-ext "notepad" :ext "exe")
       ; ファイル notepad.exe を、環境変数 PATH の場所から探します
   
   (find-file-in-paths-ext "more" :ext '("" "exe" "com"))
-      ; ファイル more か more.exe か more.com を、環境変数 PATH の場所から探します。
+      ; ファイル more か more.exe か more.com を、環境変数 PATH の場所から探します
 ```
 - find-file-in-paths-ext 手続きの書式は以下の通りです。  
+  (キーワード引数の ext 以外は、find-file-in-paths 手続きと同じです)  
   `find-file-in-paths-ext  name  :paths  paths  :pred  pred  :ext  ext`
   - 第1引数の name には、検索するファイル名を指定します。
     
@@ -49,10 +50,6 @@
     `#f` が返ります。  
     複数のファイルが条件を満たすような場合には、最初に見つかったファイルのフルパスが  
     返ります。
-
-
-## その他 情報等
-1. 内部では、引数の name に拡張子を付加して、find-file-in-paths 手続きを呼び出しています。
 
 
 ## 環境等
