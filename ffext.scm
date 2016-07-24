@@ -1,11 +1,13 @@
 ;; -*- coding: utf-8 -*-
 ;;
 ;; ffext.scm
-;; 2016-7-24 v1.00
+;; 2016-7-24 v1.01
 ;;
 ;; ＜内容＞
-;;   Gauche で、find-file-in-paths 手続きに拡張子の指定を追加した
+;;   Gauche で find-file-in-paths 手続きを拡張した
 ;;   find-file-in-paths-ext 手続きを使用可能にするためのモジュールです。
+;;
+;;   find-file-in-paths-ext 手続きは、ファイルの拡張子を指定して検索が行えます。
 ;;
 ;;   詳細については、以下のページを参照ください。
 ;;   https://github.com/Hamayama/ffext
