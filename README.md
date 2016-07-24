@@ -52,7 +52,7 @@
 
 
 ## その他 情報等
-1. 内部で、file.util の find-file-in-paths を使用しています。
+1. 内部では、引数の name に拡張子を付加して、find-file-in-paths 手続きを呼び出しています。
 
 
 ## 環境等
