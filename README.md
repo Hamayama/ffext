@@ -3,8 +3,10 @@
 ![image](image.png)
 
 ## 概要
-- Gauche で、find-file-in-paths 手続きに拡張子の指定を追加した  
-  find-file-in-paths-ext 手続きを使用可能にするためのモジュールです。
+- Gauche で find-file-in-paths 手続きを拡張した find-file-in-paths-ext 手続きを  
+  使用可能にするためのモジュールです。
+
+- find-file-in-paths-ext 手続きは、ファイルの拡張子を指定して検索が行えます。
 
 
 ## インストール方法
@@ -20,11 +22,10 @@
       ; ファイル notepad.exe を、環境変数 PATH の場所から探します
   
   (find-file-in-paths-ext "more" :ext '("" "exe" "com"))
-      ; ファイル more か more.exe か more.com を、環境変数 PATH の場所から
-      ; 探します。
+      ; ファイル more か more.exe か more.com を、環境変数 PATH の場所から探します。
 ```
 - find-file-in-paths-ext 手続きの書式は以下の通りです。  
-  `find-file-in-paths-ext name :paths paths :pred pred :ext ext`
+  `find-file-in-paths-ext  name  :paths  paths  :pred  pred  :ext  ext`
   - 第1引数の name には、検索するファイル名を指定します。
     
   - キーワード引数の paths には、検索するパスのリストを指定します。  
@@ -45,7 +46,7 @@
     ファイルが見つかり、かつ、述語の手続きを満たした場合には、ファイルのフルパスが  
     返ります。  
     ファイルが見つからないか、または、述語の手続きを満たさなかった場合には、  
-    #f が返ります。  
+    `#f` が返ります。  
     複数のファイルが条件を満たすような場合には、最初に見つかったファイルのフルパスが  
     返ります。
 
