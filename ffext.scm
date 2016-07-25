@@ -1,7 +1,7 @@
 ;; -*- coding: utf-8 -*-
 ;;
 ;; ffext.scm
-;; 2016-7-24 v1.02
+;; 2016-7-25 v1.03
 ;;
 ;; ＜内容＞
 ;;   Gauche で find-file-in-paths 手続きを拡張した
@@ -23,15 +23,16 @@
 ;;   使用例
 ;;     (find-file-in-paths-ext "notepad" :ext "exe")
 ;;     (find-file-in-paths-ext "more" :ext '("" "exe" "com"))
-(define (find-file-in-paths-ext name :key paths pred (ext ""))
-  (let ((args1 (cond-list
-                ((not (undefined? paths)) @ `(:paths ,paths))
-                ((not (undefined? pred))  @ `(:pred  ,pred))))
-        (exts  (map x->string (if (list? ext) ext (list ext)))))
+(define (find-file-in-paths-ext name :key paths pred (ext "") (dot "."))
+  (let ((args1  (cond-list
+                 ((not (undefined? paths)) @ `(:paths ,paths))
+                 ((not (undefined? pred))  @ `(:pred  ,pred))))
+        (exts   (map x->string (if (list? ext) ext (list ext))))
+        (dot-st (x->string dot)))
     (any
      (lambda (ext1)
        (apply find-file-in-paths
-              (cons (if (equal? ext1 "") name (string-append name "." ext1))
+              (cons (if (equal? ext1 "") name (string-append name dot-st ext1))
                     args1)))
      exts)))
 
