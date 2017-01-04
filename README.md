@@ -26,7 +26,7 @@
 ```
 - find-file-in-paths-ext 手続きの書式は以下の通りです。  
   (キーワード引数の ext と dot 以外は、find-file-in-paths 手続きと同じです)  
-  `find-file-in-paths-ext name :paths paths :pred pred :ext ext :dot dot`
+  `find-file-in-paths-ext name [:paths paths] [:pred pred] [:ext ext] [:dot dot]`
   - 第1引数の name には、検索するファイル名を指定します。
     
   - キーワード引数の paths には、検索するパスのリストを指定します。  
@@ -71,4 +71,4 @@
 - 2016-8-7  v1.04 変数名一部見直し
 
 
-(2016-10-26)
+(2017-1-4)
