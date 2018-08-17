@@ -15,12 +15,12 @@
   ;; overwite find-file-in-paths
   (define (find-file-in-paths name :key paths pred)
     (apply find-file-in-paths-ext
+           name
+           :ext '("" "exe")
            (cond-list
-            (#t name)
             ((not (undefined? paths)) @ `(:paths ,paths))
             ((not (undefined? pred))  @ `(:pred  ,pred))
-            (#t @ '(:ext ("" "exe"))))
-           )))
+            ))))
  (else))
 
 (define (testA name expected expr :optional (check test-check))

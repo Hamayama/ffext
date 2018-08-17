@@ -1,7 +1,7 @@
 ;; -*- coding: utf-8 -*-
 ;;
 ;; ffext.scm
-;; 2016-8-7 v1.04
+;; 2018-8-17 v1.05
 ;;
 ;; ＜内容＞
 ;;   Gauche で find-file-in-paths 手続きを拡張した
@@ -32,7 +32,7 @@
     (any
      (lambda (ext1)
        (apply find-file-in-paths
-              (cons (if (equal? ext1 "") name (string-append name dot1 ext1))
-                    args1)))
+              (if (equal? ext1 "") name (string-append name dot1 ext1))
+              args1))
      exts)))
 
